@@ -101,7 +101,7 @@ a {
   background-image: radial-gradient(circle farthest-corner at 1.3% 2.8%, rgb(239, 249, 249) 0%, rgb(182, 199, 226) 100.2%);
   height: 100%;
   width: 100%;
-  background-size: auto;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -119,7 +119,7 @@ a {
 }
 
 .form-inicio1 {
-  border: 1px solid black;
+  border: 1px solid radial-gradient(circle farthest-corner at 1.3% 2.8%, rgb(239, 249, 249) 0%, rgb(182, 199, 226) 100.2%);
   width: 100%;
   background-image: radial-gradient(circle farthest-corner at 1.3% 2.8%, rgb(239, 249, 249) 0%, rgb(182, 199, 226) 100.2%);
   display: flex;
@@ -188,6 +188,25 @@ a {
 }
 
 /*especificos login*/
+.grilla-login {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 114px 750px 80px;
+  grid-template-areas: "nav" "form" "footer";
+}
+.grilla-login #nav {
+  grid-area: nav;
+}
+.grilla-login #form {
+  grid-area: form;
+  display: flex;
+  align-content: center;
+  justify-content: start;
+}
+.grilla-login #footer {
+  grid-area: footer;
+}
+
 .flex-login {
   display: flex;
   flex-direction: column;
@@ -225,20 +244,21 @@ a {
 
 .grilla-registro {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 100px 500px 200px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 750px 80px;
   grid-template-areas: "   nav     " "  form         " "   footer      ";
+}
+.grilla-registro #nav {
+  grid-area: nav;
 }
 .grilla-registro #form-registro {
   grid-area: form;
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
 .grilla-registro #footer {
   grid-area: footer;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  align-content: flex-end;
-  flex-wrap: wrap;
 }
 
 .form-registro {
@@ -336,6 +356,41 @@ a {
   font-family: 16px "fira-light", sans-serif;
 }
 
+.img-metodos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 30px 150px 25px 25px 500px 82px;
+  grid-template-areas: "     t1      " "      d1         " "     img-metodos    " "       d2     " "      d3         " "      mapa             " "          footer             ";
+}
+.img-metodos #t1 {
+  grid-area: t1;
+}
+.img-metodos #d1 {
+  grid-area: d1;
+}
+.img-metodos #d1 p {
+  font-size: 20px;
+}
+.img-metodos #img-metodos {
+  grid-area: img-metodos;
+}
+.img-metodos #d2 {
+  grid-area: d2;
+}
+.img-metodos #d3 {
+  grid-area: d3;
+}
+.img-metodos #mapa {
+  grid-area: mapa;
+}
+.img-metodos #mapa .map-info {
+  height: 200px;
+  width: 451px;
+}
+.img-metodos #footer {
+  grid-area: footer;
+}
+
 /*pseudoclases*/
 #nav-bar a:hover {
   background-color: rgb(137, 190, 224);
@@ -360,13 +415,15 @@ button:active {
 /*mediaquaries*/
 @media (max-width: 480px) {
   .footer-all {
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
     background-color: #B19F87;
+    text-align: center;
     width: 100%;
     height: 80px;
     border: 1px solid black;
-    text-align: center;
-    font-size: 12px;
+    margin: 0;
   }
   h1 {
     font-size: 35px;
@@ -422,7 +479,7 @@ button:active {
     grid-area: form-inicio;
   }
   .grilla-inicio #form-inicio1 .form-inicio1 {
-    border: 1px solid black;
+    border: 1px solid radial-gradient(circle farthest-corner at 1.3% 2.8%, rgb(239, 249, 249) 0%, rgb(182, 199, 226) 100.2%);
     width: 100%;
     background-color: #f6eacf;
     display: flex;
@@ -529,15 +586,14 @@ button:active {
   .grilla-login {
     display: grid;
     grid-template-columns: 479px;
-    grid-template-rows: 90px 620px 82px;
-    grid-template-areas: "      nav-bar                 " "       form            " "      footer                 ";
-  }
-  .grilla-login #nav-bar {
-    grid-area: nav-bar;
+    grid-template-rows: 620px 82px;
+    grid-template-rows: 750px 80px;
+    grid-template-areas: "form" "footer";
   }
   .grilla-login #form {
     grid-area: form;
-    align-items: center;
+    display: flex;
+    align-content: center;
     justify-content: start;
   }
   .grilla-login #footer {

@@ -46,7 +46,7 @@ a{
     background-image: radial-gradient( circle farthest-corner at 1.3% 2.8%,  rgba(239,249,249,1) 0%, rgba(182,199,226,1) 100.2% );
     height: 100%;
     width: 100%;
-    background-size:auto;
+    background-size:cover;
     background-repeat: no-repeat;
 }
 .grilla-inicio{
@@ -64,6 +64,9 @@ a{
 .img-link{@include img-link;
     }
 /*especificos login*/
+.grilla-login{
+   @include grilla-login
+}
 .flex-login{
    @include flex-login
 }
@@ -117,6 +120,51 @@ a{
 .img-metodos-i{
     @include img-metodos-i
 }
+.img-metodos{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 30px 150px 25px 25px 500px 82px;
+    grid-template-areas: 
+    "     t1      "
+    "      d1         "
+    "     img-metodos    "
+    "       d2     "
+    "      d3         "
+    "      mapa             "
+    "          footer             "
+    
+    
+    ;
+    #t1{
+        grid-area: t1;
+    }
+    #d1{
+        grid-area: d1;
+        p{
+            font-size: 20px;
+        }
+    }
+    #img-metodos{
+        grid-area: img-metodos;
+    }
+    #d2{
+        grid-area: d2;
+    }
+    #d3{
+        grid-area: d3;
+    }
+    #mapa{
+        grid-area: mapa;
+        .map-info{
+            height: 200px;
+            width: 451px; 
+        }
+    }
+    #footer{
+        grid-area: footer;
+    }
+}
+
 /*pseudoclases*/
 #nav-bar a:hover{
     background-color:rgb(137, 190, 224);
